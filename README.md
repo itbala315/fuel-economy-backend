@@ -95,7 +95,7 @@ app.use(cors({
 
 ## Deploying to GitHub
 
-To deploy this project to your GitHub repository (https://github.com/itbala315):
+To deploy this project to your GitHub repository (https://github.com/itbala315/fuel-economy-backend):
 
 1. Initialize a Git repository (if not already done):
    ```bash
@@ -104,7 +104,7 @@ To deploy this project to your GitHub repository (https://github.com/itbala315):
 
 2. Add your GitHub repository as a remote:
    ```bash
-   git remote add origin https://github.com/itbala315/fuel-economy-app.git
+   git remote add origin https://github.com/itbala315/fuel-economy-backend.git
    ```
 
 3. Add all files to the staging area:
@@ -119,9 +119,9 @@ To deploy this project to your GitHub repository (https://github.com/itbala315):
 
 5. Push to GitHub:
    ```bash
-   git push -u origin main
+   git push -u origin master
    ```
-   Note: Use `master` instead of `main` if your default branch is named master.
+   Note: If your default branch is named `main` instead of `master`, use `git push -u origin main`.
 
 ### Setting up GitHub Actions for CI/CD (Optional)
 
