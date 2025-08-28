@@ -1,0 +1,44 @@
+name: Deploy Backend
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Run tests (if any)
+        run: npm test || true
+        
+      # If you're deploying to Render, the deployment will happen automatically
+      # when you push to the connected repository
+      
+      # For manual deployment to Render
+      - name: Deploy to Render (optional)
+        run: |
+          echo "For manual deployment to Render:"
+          echo "1. Go to your Render dashboard"
+          echo "2. Select your service"
+          echo "3. Click 'Manual Deploy' and select 'Deploy latest commit'"
+        
+      # If you're using Fly.io, uncomment the section below
+      # - name: Deploy to Fly.io
+      #   run: |
+      #     curl -L https://fly.io/install.sh | sh
+      #     export FLYCTL_INSTALL="/home/runner/.fly"
+      #     export PATH="$FLYCTL_INSTALL/bin:$PATH"
+      #     fly auth token ${{ secrets.FLY_API_TOKEN }}
+      #     fly deploy

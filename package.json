@@ -1,0 +1,25 @@
+{
+  "name": "fuel-economy-backend",
+  "version": "1.0.0",
+  "description": "Backend API for automotive fuel economy data exploration",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "build": "echo 'No build step needed for backend'",
+    "deploy:render": "echo 'Just push to the repository connected to Render'",
+    "deploy:fly": "fly deploy"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "csv-parser": "^3.0.0",
+    "helmet": "^7.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": ["automotive", "fuel-economy", "api", "express"],
+  "author": "",
+  "license": "MIT"
+}
